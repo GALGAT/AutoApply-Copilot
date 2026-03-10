@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-80 p-5 bg-white text-gray-800 font-sans shadow-lg">
+  <h1 class="text-2xl font-bold mb-4 text-blue-600 text-center">AutoApply Copilot</h1>
+  
+  <div class="mb-4">
+    <label class="block text-sm font-semibold mb-1">Choose AI Model</label>
+    <select id="aiModel" class="w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <option value="openai">OpenAI (GPT-4)</option>
+      <option value="gemini">Google Gemini</option>
+      <option value="anthropic">Anthropic (Claude)</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label class="block text-sm font-semibold mb-1">API Key</label>
+    <input type="password" id="apiKey" placeholder="Enter your API key" class="w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+  </div>
+
+  <div class="mb-4 border-t pt-4">
+    <label class="block text-sm font-semibold mb-1">Upload Resumes (.pdf, .txt)</label>
+    <input type="file" id="resumeUpload" multiple accept=".txt,.pdf" class="text-sm mb-2 w-full file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+    <p id="uploadStatus" class="text-xs text-green-600 font-medium mt-1 hidden">Resumes saved!</p>
+  </div>
+
+  <button id="autofillBtn" class="w-full bg-blue-600 text-white font-bold py-3 rounded hover:bg-blue-700 transition shadow-md mt-2">
+    Autofill Application
+  </button>
+  
+  <p id="statusMsg" class="text-xs text-center mt-3 text-gray-500"></p>
+
+  <script src="pdf.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
